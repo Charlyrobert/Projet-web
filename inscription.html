@@ -12,8 +12,8 @@
             <h1>MonSiteDeRencontre</h1>
             <nav>
                 <ul>
-                    <li><a href="#">Accueil</a></li>
-                    <li><a href="#">Inscription</a></li>
+                    <li><a href="accueil.html">Accueil</a></li>
+                    <li><a href="inscription.html">Inscription</a></li>
                     <li><a href="#">Connexion</a></li>
                 </ul>
             </nav>
@@ -25,8 +25,16 @@
                 <h2>Inscription</h2>
                 <form action="#" method="post">
                     <div class="form-group">
-                        <label for="pseudo">Pseudonyme (login)*:</label>
+                        <label for="pseudo">Pseudo (login)*:</label>
                         <input type="text" id="pseudo" name="pseudo" required minlength="3" maxlength="20">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Mot de passe :</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm_password">Confirmer mot de passe :</label>
+                        <input type="password" id="confirm_password" name="confirm_password" required>
                     </div>
                     <div class="form-group">
                         <label for="sexe">Sexe*:</label>
