@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscription - MonSiteDeRencontre</title>
+    <title>Inscription - Rencontres.com</title>
     <link rel="stylesheet" href="inscription.css"> <!-- Lien vers votre fichier CSS -->
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>MonSiteDeRencontre</h1>
+            <h1>Rencontres.com</h1>
             <nav>
                 <ul>
                     <li><a href="accueil.html">Accueil</a></li>
@@ -23,7 +23,7 @@
         <section id="inscription">
             <div class="container">
                 <h2>Inscription</h2>
-                <form action="#" method="post">
+                <form id="registration_form" method="post">
                     <div class="form-group">
                         <label for="pseudo">Pseudo (login)*:</label>
                         <input type="text" id="pseudo" name="pseudo" required minlength="3" maxlength="20">
@@ -35,6 +35,7 @@
                     <div class="form-group">
                         <label for="confirm_password">Confirmer mot de passe :</label>
                         <input type="password" id="confirm_password" name="confirm_password" required>
+                        <span id="password_match"></span> <!-- Placeholder pour afficher le message de correspondance -->
                     </div>
                     <div class="form-group">
                         <label for="sexe">Sexe*:</label>
@@ -97,11 +98,13 @@
                 </form>
             </div>
         </section>
+        
     </main>
     <footer>
         <div class="container">
             <p>&copy; 2024 MonSiteDeRencontre. Tous droits réservés.</p>
         </div>
     </footer>
+    <script src="inscription.js"></script>
 </body>
 </html>
