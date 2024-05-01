@@ -28,7 +28,27 @@ signupForm.addEventListener("submit", function(event) {
     // Empêcher le comportement par défaut du formulaire (éviter le rechargement de la page)
     event.preventDefault();
 
+    // Stocker les données utilisateur dans le localStorage
+    var userData = {
+        pseudo: document.getElementById("pseudo").value,
+        password: document.getElementById("password").value,
+        sexe: document.getElementById("sexe").value,
+        dob: document.getElementById("dob").value,
+        profession: document.getElementById("profession").value,
+        pays: document.getElementById("pays").value,
+        region: document.getElementById("region").value,
+        departement: document.getElementById("departement").value,
+        situation_amoureuse: document.getElementById("situation_amoureuse").value,
+        taille: document.getElementById("taille").value,
+        poids: document.getElementById("poids").value,
+        bio: document.getElementById("bio").value,
+        centres_interets: document.getElementById("centres_interets").value
+        // Ajoutez d'autres champs si nécessaire
+    };
 
-    // Une fois le formulaire validé, rediriger l'utilisateur vers la page de profil
+    // Stocker les données utilisateur dans le localStorage avec la clé "userData"
+    localStorage.setItem("userData", JSON.stringify(userData));
+
+    // Rediriger l'utilisateur vers la page de profil
     window.location.href = "profil.html";
 });
