@@ -11,6 +11,7 @@ body {
     line-height: 1.6;
     background-color: #f4f4f4;
     color: #333;
+    min-height: 100vh; /* La page prendra au moins 100% de la hauteur de la fenêtre */
 }
 
 .container {
@@ -20,7 +21,7 @@ body {
 }
 
 header {
-    background-color: #333;
+    background: linear-gradient(to right, #388e3c, #1b5e20); /* Dégradé de vert */
     color: #fff;
     padding: 1rem 0;
 }
@@ -46,14 +47,15 @@ nav ul li a {
 
 main {
     padding: 2rem 0;
+    min-height: calc(100vh - 162px); /* La hauteur minimale du contenu principal est calculée en soustrayant la hauteur du header et du footer */
 }
 
 section {
-    margin-bottom: 2rem;
+    margin-bottom: 4rem; /* Augmentation de la marge entre les sections */
 }
 
 footer {
-    background-color: #333;
+    background: linear-gradient(to right, #388e3c, #1b5e20); /* Dégradé de vert */
     color: #fff;
     padding: 1rem 0;
     text-align: center;
@@ -64,30 +66,43 @@ footer {
     text-align: center;
 }
 
-#presentation a {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background-color: #007bff;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
+#presentation p {
+    margin-bottom: 2rem;
 }
 
-#presentation a:hover {
-    background-color: #0056b3;
+.site-presentation {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
-#derniers-utilisateurs {
+.site-feature {
+    flex-basis: 30%;
+    padding: 20px;
+    margin-bottom: 20px;
     background-color: #fff;
-    padding: 1rem;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.site-feature:hover {
+    transform: translateY(-5px);
+}
+
+.site-feature h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.site-feature p {
+    color: #555;
 }
 
 .btn {
     display: inline-block;
     padding: 0.5rem 1rem;
-    background-color: #007bff;
+    background-color: #046904;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
@@ -107,5 +122,9 @@ footer {
     header nav ul li {
         display: block;
         margin: 0.5rem 0;
+    }
+
+    .site-feature {
+        flex-basis: 100%;
     }
 }
