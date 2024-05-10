@@ -5,60 +5,65 @@
     box-sizing: border-box;
 }
 
+/* Styles de base */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
+    line-height: 1.6;
+    background-color: #f4f4f4;
     color: #333;
 }
 
 .container {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 0 20px;
 }
 
 header {
-    background-color: #4caf50;
+    background: linear-gradient(to right, #8e44ad, #2980b9);
     color: #fff;
-    padding: 20px;
+    padding: 1rem 0;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
     text-align: center;
 }
 
-main {
-    padding: 20px 0;
+nav ul {
+    list-style: none;
 }
 
-section {
-    margin-bottom: 30px;
+nav ul li {
+    display: inline;
+    margin-right: 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 2rem 0;
 }
 
 .profile-info {
-    background-color: #fff;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.profile-info h2 {
-    margin-bottom: 10px;
-}
-
-.info-item {
-    margin-bottom: 10px;
+    margin-bottom: 2rem;
 }
 
 .label {
     font-weight: bold;
 }
 
-.value {
-    margin-left: 10px;
+.info-item {
+    margin-bottom: 1rem;
 }
 
 footer {
-    background-color: #4caf50;
+    background: linear-gradient(to right, #8e44ad, #2980b9);
     color: #fff;
+    padding: 1rem 0;
     text-align: center;
-    padding: 20px;
 }
