@@ -1,4 +1,4 @@
-/* Styles spécifiques pour le formulaire */
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f9f9f9;
@@ -16,8 +16,8 @@ body {
 }
 
 header {
-    background-color: #4caf50; /* Vert doux */
-    color: #1b5e20; /* Vert foncé */
+    background-color: #a200ff; /* Vert doux */
+    color: #2600ff; /* Vert foncé */
     padding: 20px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -42,18 +42,18 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #1b5e20; /* Vert foncé */
+    color: #ae00ff;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #2e7d32; /* Vert plus clair au survol */
+    color: #3910ee; 
 }
 
 footer {
-    background-color: #4caf50; /* Vert doux */
-    color: #1b5e20; /* Vert foncé */
+    background-color: #a200ff; 
+    color: #a200ff; 
     text-align: center;
     padding: 20px;
     border-bottom-left-radius: 10px;
@@ -89,7 +89,7 @@ input[type="file"] {
 input[type="submit"] {
     width: 100%;
     padding: 10px;
-    background-color: #4caf50; /* Vert doux */
+    background-color: #9800fd; 
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -99,5 +99,5 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #45a049; /* Vert plus foncé au survol */
+    background-color: #1100ff; 
 }
