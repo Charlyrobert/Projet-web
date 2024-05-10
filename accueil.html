@@ -1,103 +1,51 @@
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    margin: 0;
-    padding: 0;
-}
-
-.container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-header {
-    background-color: #a200ff; /* Vert doux */
-    color: #2600ff; /* Vert foncé */
-    padding: 20px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-header h1 {
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
-
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-nav ul li a {
-    color: #ae00ff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: #3910ee; 
-}
-
-footer {
-    background-color: #a200ff; 
-    color: #a200ff; 
-    text-align: center;
-    padding: 20px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-}
-
-form {
-    margin-top: 20px;
-}
-
-.form-group {
-    margin-bottom: 30px;
-}
-
-label {
-    display: block;
-    margin-bottom: 10px;
-}
-
-input[type="text"],
-input[type="date"],
-select,
-textarea,
-input[type="file"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-    margin-top: 5px;
-}
-
-input[type="submit"] {
-    width: 100%;
-    padding: 10px;
-    background-color: #9800fd; 
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 20px;
-}
-
-input[type="submit"]:hover {
-    background-color: #1100ff; 
-}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rencontres.com</title>
+    <link rel="stylesheet" href="accueil.css"> <!-- Lien vers votre fichier CSS -->
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Rencontres.com</h1>
+            <nav>
+                <ul>
+                    <li><a href="accueil.html">Accueil</a></li>
+                    <li><a href="inscription.html">Inscription</a></li>
+                    <li><a href="#">Connexion</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section id="presentation">
+            <div class="container">
+                <h2>Bienvenue sur Rencontres.com</h2>
+                <p>Trouvez votre âme sœur parmi des milliers de profils vérifiés.</p>
+                <div class="site-presentation">
+                    <div class="site-feature">
+                        <h3>Rencontres Authentiques</h3>
+                        <p>Faites des rencontres réelles avec des personnes sérieuses.</p>
+                    </div>
+                    <div class="site-feature">
+                        <h3>Recherche Avancée</h3>
+                        <p>Utilisez nos filtres avancés pour trouver des profils qui vous correspondent.</p>
+                    </div>
+                    <div class="site-feature">
+                        <h3>Confidentialité Assurée</h3>
+                        <p>Vos informations personnelles sont sécurisées et restent confidentielles.</p>
+                    </div>
+                </div>
+                <a href="inscription.html" class="btn">Inscrivez-vous maintenant</a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Rencontres.com. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+</html>
