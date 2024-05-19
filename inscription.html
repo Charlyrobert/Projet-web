@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscription - Rencontres.com</title>
-    <link rel="stylesheet" href="inscription.css"> <!-- Lien vers votre fichier CSS -->
+    <link rel="stylesheet" href="inscription.css">
 </head>
 <body>
     <header>
@@ -14,7 +14,7 @@
                 <ul>
                     <li><a href="accueil.html">Accueil</a></li>
                     <li><a href="inscription.html">Inscription</a></li>
-                    <li><a href="#">Connexion</a></li>
+                    <li><a href="connexion.html">Connexion</a></li>
                 </ul>
             </nav>
         </div>
@@ -23,19 +23,20 @@
         <section id="inscription">
             <div class="container">
                 <h2>Inscription</h2>
-                <form id="registration_form" method="post" action="inscription.php">
+
+                <form id="registration_form1" method="post" action="inscription.php">
                     <div class="form-group">
                         <label for="pseudo">Pseudo (login)*:</label>
-                        <input type="text" id="pseudo" name="pseudo" required minlength="3" maxlength="20">
+                        <input type="text" id="pseudo" name="pseudo" required minlength="1" maxlength="20">
                     </div>
                     <div class="form-group">
-                        <label for="password">Mot de passe :</label>
+                        <label for="password">Mot de passe*:</label>
                         <input type="password" id="password" name="password" required>
                     </div>
                     <div class="form-group">
-                        <label for="confirm_password">Confirmer mot de passe :</label>
+                        <label for="confirm_password">Confirmer mot de passe*:</label>
                         <input type="password" id="confirm_password" name="confirm_password" required>
-                        <span id="password_match"></span> <!-- Placeholder pour afficher le message de correspondance -->
+                        <span id="password_match"></span>
                     </div>
                     <div class="form-group">
                         <label for="sexe">Sexe*:</label>
@@ -57,48 +58,17 @@
                         <label for="lieu_residence">Lieu de résidence:</label>
                         <input type="text" id="pays" name="pays" placeholder="Pays">
                         <input type="text" id="region" name="region" placeholder="Région">
-                        <input type="text" id="departement" name="departement" placeholder="Département">
-                    </div>
-                    <div class="form-group">
-                        <label for="situation_amoureuse">Situation amoureuse et familiale*:</label>
-                        <select id="situation_amoureuse" name="situation_amoureuse" required>
-                            <option value="celibataire">Célibataire</option>
-                            <option value="en_couple">En couple</option>
-                            <option value="marie">Marié(e)</option>
-                            <option value="divorce">Divorcé(e)</option>
-                            <option value="veuf">Veuf(ve)</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="taille">Taille:</label>
-                        <input type="text" id="taille" name="taille">
-                    </div>
-                    <div class="form-group">
-                        <label for="poids">Poids:</label>
-                        <input type="text" id="poids" name="poids">
                     </div>
                     <div class="form-group">
                         <label for="bio">Biographie:</label>
                         <textarea id="bio" name="bio"></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="centres_interets">Centres d'intérêts:</label>
-                        <input type="text" id="centres_interets" name="centres_interets">
-                    </div>
-                    <div class="form-group">
-                        <label for="photos">Une ou plusieurs photos:</label>
-                        <input type="file" id="photos" name="photos" accept="image/*" multiple>
-                    </div>
-                    <div class="form-group">
-                        <p>* Champs obligatoires</p>
-                    </div>
-                    <div class="form-group">
                         <input type="submit" value="S'inscrire" class="btn">
                     </div>
                 </form>
-            </div>
+         </div>
         </section>
-        
     </main>
     <footer>
         <div class="container">
