@@ -1,29 +1,34 @@
 <?php
+echo "Debut inscription \n";
 
-// Traitement du formulaire d'inscription
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Récupération des données
-    $pseudo = $_POST['pseudo'];
-    $mot_de_passe = $_POST['mot_de_passe'];
-    $sexe = $_POST['sexe'];
-    $date_naissance = $_POST['dob'];
-    $profession = $_POST['profession'];
-    $lieu_residence = $_POST['pays'] . ", " . $_POST['region'] . ", " . $_POST['departement'];
-    $situation = $_POST['situation_amoureuse'];
-    $taille = $_POST['taille'];
-    $bio = $_POST['bio'];
+    $pseudo = $_POST["pseudo"];
+    $password = $_POST["password"];
+    $sexe = $_POST["sexe"];
+    $dob = $_POST["dob"];
+    $profession = $_POST["profession"];
+    $pays = $_POST["pays"];
+    $region = $_POST["region"];
+    $bio = $_POST["bio"];
+    
+/*
+    $departement = $_POST["departement"];
+    $situation_amoureuse = $_POST["situation_amoureuse"];
+    $taille = $_POST["taille"];
+    $poids = $_POST["poids"];
+    $centres_interets = $_POST["centres_interets"];
+*/
 
-    // Formation de la chaîne de données utilisateur avec le format spécifié
-    $userdata = "$pseudo|$mot_de_passe|$sexe|$date_naissance|$profession|$lieu_residence|$situation|$taille|$bio\n";
+    // Stocker les données dans un fichier texte
+    $file = fopen("utilisateurs.txt", "a");
+    fwrite($file, "$pseudo | $password | $sexe | $dob | $profession | $pays | $region | $bio \n");    
+//    fwrite($file, "Post $pseudo | $password | $sexe | $dob | $profession | $pays | $region | $departement | $situation_amoureuse | $taille | $poids | $bio | $centres_interets\n");
+    fclose($file);
 
-    // Chemin vers le fichier base de données
-    $database = "user_info.txt";
-
-    // Écriture des données utilisateur dans le fichier avec FILE_APPEND pour ajouter sans écraser
-    file_put_contents($database, $userdata, FILE_APPEND);
-
-    // Redirection vers une page de confirmation ou une autre action après l'enregistrement des données
-    header("Location: confirmation.html");
-    exit(); // Assurez-vous d'arrêter l'exécution du script après la redirection
-}
+    // Rediriger l'utilisateur vers la page de profil après l'inscription
+    header("Location: profil.php?pseudo=$pseudo");
+    exit();
+} else {
+    echo "Pas de POST\n";
+} 
 ?>
