@@ -1,31 +1,25 @@
-// Profil.js
+document.addEventListener("DOMContentLoaded", function () {
+    // Vérifier si les informations de l'utilisateur sont stockées dans le localStorage
+    const user = JSON.parse(localStorage.getItem("user"));
 
-// Fonction pour récupérer les informations de l'utilisateur depuis le stockage local
-function afficherProfilUtilisateur() {
-    // Récupérer les données de l'utilisateur depuis le stockage local
-    const profilUtilisateur = JSON.parse(localStorage.getItem("utilisateur"));
+    if (user) {
+        const profileDiv = document.getElementById("user-profile");
 
-    // Vérifier si des données sont disponibles
-    if (profilUtilisateur) {
-        // Afficher les informations dans la page
-        pseudoElement.textContent = profilUtilisateur.pseudo;
-        sexeElement.textContent = profilUtilisateur.sexe;
-        nomElement.textContent = profilUtilisateur.nom;
-        adresseElement.textContent = profilUtilisateur.adresse;
-        passwordElement.textContent = profilUtilisateur.password;
-
-        // Afficher les fichiers téléchargés
-        profilUtilisateur.fichiers.forEach(fichier => {
-            const lienFichier = document.createElement("a");
-            lienFichier.href = fichier;
-            lienFichier.textContent = fichier;
-            fichiersElement.appendChild(lienFichier);
-            fichiersElement.appendChild(document.createElement("br"));
-        });
+        // Afficher les informations de l'utilisateur
+        profileDiv.innerHTML = `
+            <p><strong>Pseudo:</strong> ${user.pseudo}</p>
+            <p><strong>Sexe:</strong> ${user.sexe}</p>
+            <p><strong>Date de naissance:</strong> ${user.dob}</p>
+            <p><strong>Profession:</strong> ${user.profession}</p>
+            <p><strong>Lieu de résidence:</strong> ${user.pays}, ${user.region}, ${user.departement}</p>
+            <p><strong>Situation amoureuse:</strong> ${user.situation_amoureuse}</p>
+            <p><strong>Taille:</strong> ${user.taille}</p>
+            <p><strong>Poids:</strong> ${user.poids}</p>
+            <p><strong>Biographie:</strong> ${user.bio}</p>
+            <p><strong>Centres d'intérêts:</strong> ${user.centres_interets}</p>
+        `;
     } else {
-        console.log("Aucun profil utilisateur trouvé !");
+        // Si aucune information n'est trouvée, rediriger l'utilisateur vers la page d'inscription
+        window.location.href = "inscription.html";
     }
-}
-
-// Appeler la fonction pour afficher le profil de l'utilisateur
-afficherProfilUtilisateur();
+});
