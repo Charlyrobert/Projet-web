@@ -1,20 +1,32 @@
 <?php
 session_start();
-include 'config.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $pseudo = $_POST['pseudo'];
-    $password = $_POST['password'];
+    $pseudo = $_POST["pseudo"];
+    $password = $_POST["password"];
+    
+    // Lire les données du fichier utilisateurs
+    $lines = file("utilisateurs.txt");
+    $authenticated = false;
 
-    $stmt = $conn->prepare("SELECT * FROM users WHERE pseudo = ?");
-    $stmt->bind_param("s", $pseudo);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $user = $result->fetch_assoc();
+    foreach ($lines as $line) {
+        $infos = explode(" | ", $line);
+        if ($infos[0] == $pseudo && trim($infos[1]) == $password) {
+            $_SESSION["pseudo"] = $pseudo;
+            $_SESSION["sexe"] = $infos[2];
+            $_SESSION["dob"] = $infos[3];
+            $_SESSION["profession"] = $infos[4];
+            $_SESSION["pays"] = $infos[5];
+            $_SESSION["region"] = $infos[6];
+            $_SESSION["bio"] = trim($infos[7]);
+            $authenticated = true;
+            break;
+        }
+    }
 
-    if ($user && password_verify($password, $user['password'])) {
-        $_SESSION['user_id'] = $user['id'];
+    if ($authenticated) {
         header("Location: profil.php");
+        exit();
     } else {
         echo "Pseudo ou mot de passe incorrect";
     }
