@@ -1,3 +1,4 @@
+
 // Récupérer les champs de mot de passe
 var password = document.getElementById("password");
 var confirm_password = document.getElementById("confirm_password");
