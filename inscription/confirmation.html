@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenue</title>
+</head>
+<body>
+    <?php
+    // Récupérer le nom d'utilisateur depuis les paramètres de l'URL
+    $username = htmlspecialchars($_GET['username']);
+    ?>
+    <h1>Bienvenue <?php echo $username; ?> !</h1>
+    <p>Merci de vous être inscrit sur notre site.</p>
+</body>
+</html>
