@@ -16,9 +16,8 @@ body {
 }
 
 header {
-    background-color: #a200ff; /* Vert doux */
-    color: #2600ff; /* Vert foncé */
-    padding: 20px;
+    background: linear-gradient(to right, #860ed6, #2c3dd6);
+    color: #2600ff; 
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
@@ -52,7 +51,7 @@ nav ul li a:hover {
 }
 
 footer {
-    background-color: #a200ff; 
+    background: linear-gradient(to right, #860ed6, #2c3dd6);
     color: #a200ff; 
     text-align: center;
     padding: 20px;
