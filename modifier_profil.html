@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifier Profil - Rencontres.com</title>
+    <link rel="stylesheet" href="profil.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Rencontres.com</h1>
+            
+        </div>
+    </header>
+    <main>
+        <section id="modifier-profil">
+            <div class="container">
+                <h2>Modifier Profil</h2>
+                <form method="post" action="modifier_profil.php">
+                    <div class="form-group">
+                        <label for="pseudo">Pseudo (login)*:</label>
+                        <input type="text" id="pseudo" name="pseudo" required minlength="1" maxlength="20">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Mot de passe*:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sexe">Sexe*:</label>
+                        <select id="sexe" name="sexe" required>
+                            <option value="homme">Homme</option>
+                            <option value="femme">Femme</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="dob">Date de naissance*:</label>
+                        <input type="date" id="dob" name="dob" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="profession">Profession:</label>
+                        <input type="text" id="profession" name="profession">
+                    </div>
+                    <div class="form-group">
+                        <label for="lieu_residence">Lieu de résidence:</label>
+                        <input type="text" id="pays" name="pays" placeholder="Pays">
+                        <input type="text" id="region" name="region" placeholder="Région">
+                    </div>
+                    <div class="form-group">
+                        <label for="bio">Biographie:</label>
+                        <textarea id="bio" name="bio"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Mettre à jour" class="btn">
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Rencontres.com. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+</html>
