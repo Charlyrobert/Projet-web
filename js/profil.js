@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const user = JSON.parse(localStorage.getItem("user")); 
     // Vérifier si les informations de l'utilisateur sont stockées dans le localStorage
-    const user = JSON.parse(localStorage.getItem("user"));
 
     if (user) {
         const profileDiv = document.getElementById("user-profile");
