@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profil - Rencontres.com</title>
-    <link rel="stylesheet" href="profil.css">
+    <link rel="stylesheet" href="css/profil.css">
 </head>
 <body>
     <header>
@@ -12,10 +12,9 @@
             <h1>Rencontres.com</h1>
             <nav>
                 <ul>
+                    <li><a href="page_principale.php">Page principale</a></li>
                     <li><a href="modifier_profil.html">Modifier Profil</a></li>
-                    <li><a href="#">Messages</a></li>
-                    <li><a href="#">Visiteurs</a></li>
-                    <li><a href="#">Déconnexion</a></li>
+                    <li><a href="deconnexion.php">Déconnexion</a></li>
                 </ul>
             </nav>
         </div>
@@ -25,9 +24,12 @@
             <div class="container">
                 <h2>Profil</h2>
                 <div id="user-profile">
-                    <?php
-                    if (isset($_GET['pseudo'])) {
-                        $pseudo = $_GET['pseudo'];
+                <?php
+                session_start(); //Première ligne de ton code
+                //print_r($_SESSION);
+
+                    if (isset($_SESSION['pseudo'])) {
+                        $pseudo = $_SESSION['pseudo'];
                         $lines = file("utilisateurs.txt");
                         $user_info = [];
 
