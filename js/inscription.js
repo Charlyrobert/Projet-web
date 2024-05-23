@@ -38,13 +38,7 @@ signupForm.addEventListener("submit", function(event) {
         profession: document.getElementById("profession").value,
         pays: document.getElementById("pays").value,
         region: document.getElementById("region").value,
-        departement: document.getElementById("departement").value,
-        situation_amoureuse: document.getElementById("situation_amoureuse").value,
-        taille: document.getElementById("taille").value,
-        poids: document.getElementById("poids").value,
         bio: document.getElementById("bio").value,
-        centres_interets: document.getElementById("centres_interets").value
-        // Ajoutez d'autres champs si nécessaire
     };
 
     // Stocker les données utilisateur dans le localStorage avec la clé "userData"
