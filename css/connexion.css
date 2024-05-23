@@ -20,7 +20,7 @@ body {
 }
 
 header {
-    background: linear-gradient(to right, #860ed6, #4505f5); 
+    background: linear-gradient(to right, #860ed6, #0f548d); 
     color: #fff;
     padding: 1rem 0;
 }
@@ -53,7 +53,7 @@ section {
 }
 
 footer {
-    background: linear-gradient(to right, #860ed6, #4505f5); 
+    background: linear-gradient(to right, #860ed6, #0f548d); 
     color: #fff;
     padding: 1rem 0;
     text-align: center;
@@ -93,7 +93,7 @@ footer {
 .btn {
     display: inline-block;
     padding: 0.5rem 1rem;
-    background-color: #4b0082;
+    background-color: #5a19a3;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
@@ -101,7 +101,7 @@ footer {
 }
 
 .btn:hover {
-    background-color: #000080;
+    background-color: #138ead;
 }
 
 /* Media query pour les petits écrans */
