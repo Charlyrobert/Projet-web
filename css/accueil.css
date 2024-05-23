@@ -21,7 +21,7 @@ body {
 }
 
 header {
-    background: linear-gradient(to right, #860ed6, #4505f5); /* Dégradé de vert */
+    background: linear-gradient(to right, #860ed6, #0f548d); 
     color: #fff;
     padding: 1rem 0;
 }
@@ -55,7 +55,7 @@ section {
 }
 
 footer {
-    background: linear-gradient(to right, #700daa, #2a0add); /* Dégradé de vert */
+    background: linear-gradient(to right, #860ed6, #0f548d); 
     color: #fff;
     padding: 1rem 0;
     text-align: center;
@@ -102,14 +102,14 @@ footer {
 .btn {
     display: inline-block;
     padding: 0.5rem 1rem;
-    background-color: #7b23ee;
+    background-color: #441dd4;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
 }
 
 .btn:hover {
-    background-color: #007bff;
+    background-color: #3195a7;
 }
 
 /* Media query pour les petits écrans */
