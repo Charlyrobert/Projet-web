@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion - Rencontres.com</title>
+    <link rel="stylesheet" href="admin.css"> 
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Accès administrateur web</h1>
+            <nav>
+                <ul>
+                    <li><a href="accueil.html">Accueil</a></li>
+                    <li><a href="connexion.html">Connexion</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    
+    <section class="details">
+        <div class="infos">
+            <h2>Gestions des profils inscrits sur la plateforme</h2>
+            <p>Cliquez sur le bouton ci-dessous pour afficher tous les profils inscrits sur la plateforme. Pour obtenir les informations d'un profils spécifique, utilisez la barre de recherche</p>
+        </div>
+    </section>
+
+
+    <!--Bouton d'affichage de tous les profils-->
+    <section class="profildisplay">
+        <div class="container">
+            <button class="access" onclick="window.location.href='displayuser.html'">Accès</button>
+        </div>
+    </section>
+
+    
+    <!--barre de recherche-->
+    <section class="profilsearch">
+        <div class="recherche">
+            <h2>Recherche de profils</h2>
+            <form id="searchForm">
+                <input type="text" id="searchInput" placeholder="Nom d'utilisateur" class="btn1" required>
+                <button type="submit" class="btn1">Rechercher</button>
+        </form>
+            <script>
+                document.getElementById('searchForm').addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    const query = document.getElementById('searchInput').value;
+                    fetch(`search.php?query=${encodeURIComponent(query)}`)
+                        .then(response => response.text())
+                        .then(data => {
+                            document.getElementById('result').innerHTML = data;
+                        });
+                });
+                </script>
+        
+    </div>
+    </section>
+
+
+    <!--Pieds de page-->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Rencontres.com Tous droits réservés.</p>
+        </div>
+    </footer>
+    
+</body>
+</html>
