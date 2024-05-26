@@ -1,5 +1,5 @@
 <?php
-$file = 'txt/utilisateurs.txt';
+$file = 'utilisateurs.txt';
 
 if (file_exists($file)) {
     $lines = file($file);
