@@ -1,5 +1,5 @@
 <?php
-$file = 'SMS/utilisateurs';
+$file = 'txt/utilisateurs';
 
 if (file_exists($file)) {
     $lines = file($file);
