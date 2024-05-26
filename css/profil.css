@@ -1,11 +1,10 @@
-/* Réinitialisation des styles */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Styles de base */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
