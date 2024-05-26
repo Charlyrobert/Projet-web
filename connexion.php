@@ -14,7 +14,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $authenticated = false;
     
     foreach ($lines as $line) {
-        // Supprimer les espaces blancs autour de la ligne lue
         fwrite($file, "Lecture\n");    
         $line = trim($line);
         // Diviser la ligne en tableau en utilisant le séparateur |
