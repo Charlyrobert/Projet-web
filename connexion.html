@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion - Rencontres.com</title>
-    <link rel="stylesheet" href="css/connexion.css"> 
+    <link rel="stylesheet" href="connexion.css"> 
 <body>
     <header>
+
+        
+        <!-- barre de menu superieur-->
         <div class="container">
             <h1>Rencontres.com</h1>
             <nav>
@@ -19,12 +22,15 @@
         </div>
     </header>
     <main>
+
+
+        <!-- Section connexion utilisateur-->
         <section id="connexion">
             <div class="container">
-                <h2>Connexion</h2>
+                <h2>Connexion en tant qu'utilisateur</h2>
                 <form id="login_form" method="post" action="connexion.php">
                     <div class="form-group">
-                        <label for="pseudo">Pseudo (login)*:</label>
+                        <label for="pseudo">Nom d'utilisateur*:</label>
                         <input type="text" id="pseudo" name="pseudo" required minlength="3" maxlength="20">
                     </div>
                     <div class="form-group">
@@ -38,21 +44,30 @@
             </div>
         </section>
 
-            <div class="container">
+
+        <!-- Section connexion administrateur-->
+        <section id="admin">
+            <div class="container2">
                 <h2>Connexion en tant qu'administrateur</h2>
                 <form id="loginForm">
-                    <input type="text" id="codeInput" placeholder="Code administrateur" maxlength="9" required>
-                    <button type="submit">Se connecter</button>
+                    <div class="form-group2">
+                    <input type="text" class="form-group2" id="codeInput" placeholder="Code administrateur" maxlength="9" required>
+                    </div>
+
+                    <div class="form-group2">
+                    <button type="submit" class="btn2">Connexion</button>
+                    </div>
                 </form>
                 <p id="errorMessage" class="error"></p>
             </div>
 
+            
             <!--fonction javascript pour l'accès en mode administrateur-->
             <script>
                 document.getElementById('loginForm').addEventListener('submit', function(event) {
                     event.preventDefault();
 
-                    const correctCode = "4510 0928";
+                    const correctCode = "45100928";
                     const inputCode = document.getElementById('codeInput').value.trim();
 
                     if (inputCode === correctCode) {
@@ -62,9 +77,12 @@
                     }
                 });
             </script>
-            
         </section> 
+        
     </main>
+
+
+    <!--Pieds de page-->
     <footer>
         <div class="container">
             <p>&copy; (*) : champs obligatoire.</p>
