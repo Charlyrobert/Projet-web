@@ -53,7 +53,7 @@
                     if (count($results) > 0) {
                         foreach ($results as $infos) {
                             echo "<div class='profile'>";
-                            echo "<p><strong>Pseudo:</strong> {$infos[0]}</p>";
+                            echo "<p><strong>Pseudo:</strong> <a href='profil_utilisateur.php?pseudo={$infos[0]}'>{$infos[0]}</a></p>";
                             echo "<p><strong>Sexe:</strong> {$infos[2]}</p>";
                             echo "<p><strong>Date de naissance:</strong> {$infos[3]}</p>";
                             echo "<p><strong>Profession:</strong> {$infos[4]}</p>";
