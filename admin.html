@@ -48,7 +48,7 @@
                 document.getElementById('searchForm').addEventListener('submit', function(event) {
                     event.preventDefault();
                     const query = document.getElementById('searchInput').value;
-                    fetch(`search.php?query=${encodeURIComponent(query)}`)
+                    fetch(`searchadmin.php?query=${encodeURIComponent(query)}`)
                         .then(response => response.text())
                         .then(data => {
                             document.getElementById('result').innerHTML = data;
