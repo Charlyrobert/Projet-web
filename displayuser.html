@@ -7,9 +7,25 @@
 </head>
 <body>
 
-<h1>Liste des utilisateurs</h1>
+    
+    <header>
+        <div class="container">
+            <h1>Accès administrateur web</h1>
+            <nav>
+                <ul>
+                    <li><a href="accueil.html">Accueil</a></li>
+                    <li><a href="connexion.html">Connexion</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    
+<h2>Liste des utilisateurs</h2>
 <div id="userList"></div>
 
+
+<!-- fonction javascript affichage des noms d'utilisateurs-->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     fetch('fetchusers.php')
