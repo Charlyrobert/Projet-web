@@ -18,6 +18,12 @@
     }
     ?>
 </div>
+<?php if (isset($_GET['line'])): ?>
+<form method="post" action="delete.php">
+    <input type="hidden" name="line" value="<?php echo htmlspecialchars($_GET['line']); ?>">
+    <button type="submit">Supprimer</button>
+</form>
+<?php endif; ?>
 
 </body>
 </html>
