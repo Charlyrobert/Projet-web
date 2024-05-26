@@ -6,18 +6,20 @@ if (isset($_GET['query'])) {
     if (file_exists($file)) {
         $lines = file($file);
         $result = '';
+        $matchedLine = '';
 
         foreach ($lines as $line) {
             list($firstField) = explode('|', $line);
             if (stripos(trim($firstField), $query) !== false) {
+                $matchedLine = $line;
                 $result .= htmlspecialchars($line) . '<br>';
             }
         }
 
         if ($result) {
-            // Encode the result to make it safe for URL usage
             $encodedResult = urlencode($result);
-            header("Location: displayresults.php?result=$encodedResult");
+            $encodedLine = urlencode($matchedLine);
+            header("Location: displayresults.php?result=$encodedResult&line=$encodedLine");
             exit();
         } else {
             echo 'Aucun résultat trouvé.';
@@ -29,3 +31,4 @@ if (isset($_GET['query'])) {
     echo 'Paramètre de recherche manquant.';
 }
 ?>
+
