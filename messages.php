@@ -1,30 +1,24 @@
 <?php
 session_start();
 
-if (!isset($_SESSION["pseudo"])) {
-    header("Location: connexion.html");
+if (!isset($_SESSION['pseudo'])) {
+    header('Location: connexion.html');
     exit();
 }
 
-$pseudo = $_SESSION["pseudo"];
-$lines = file("utilisateurs.txt");
-$is_abonne = false;
-
-foreach ($lines as $line) {
-    $infos = explode(" | ", $line);
-    if ($infos[0] == $pseudo && trim($infos[8]) == "1") {
-        $is_abonne = true;
-        break;
-    }
-}
-
-if (!$is_abonne) {
-    echo "Vous devez être abonné pour consulter les messages.";
-    exit();
-}
-
+$pseudo = $_SESSION['pseudo'];
 $messages = file("messages.txt");
 
+$received_messages = [];
+foreach ($messages as $message) {
+    list($expediteur, $destinataire, $msg) = explode(" | ", $message);
+    if ($destinataire == $pseudo) {
+        $received_messages[] = [
+            'expediteur' => $expediteur,
+            'message' => $msg
+        ];
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -42,8 +36,7 @@ $messages = file("messages.txt");
             <nav>
                 <ul>
                     <li><a href="profil.php">Profil</a></li>
-                    <li><a href="recherche.php">Recherche</a></li>
-                    <li><a href="messages.php">Messages</a></li>
+                    <li><a href="page_principale.php">Recherche</a></li>
                     <li><a href="deconnexion.php">Déconnexion</a></li>
                 </ul>
             </nav>
@@ -52,20 +45,14 @@ $messages = file("messages.txt");
     <main>
         <section id="messages">
             <div class="container">
-                <h2>Vos Messages</h2>
-                <div id="messages-list">
+                <h2>Messages Reçus</h2>
+                <ul>
                     <?php
-                    foreach ($messages as $message) {
-                        list($from, $to, $content) = explode(" | ", $message);
-                        if (trim($to) == $pseudo) {
-                            echo "<div class='message'>";
-                            echo "<p><strong>De:</strong> $from</p>";
-                            echo "<p><strong>Message:</strong> $content</p>";
-                            echo "</div>";
-                        }
+                    foreach ($received_messages as $msg) {
+                        echo "<li><strong>{$msg['expediteur']}:</strong> {$msg['message']}</li>";
                     }
                     ?>
-                </div>
+                </ul>
             </div>
         </section>
     </main>
